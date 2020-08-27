@@ -2,66 +2,76 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Conversor de Moedas</title>
-  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+	<meta charset="UTF-8">
+	<title>Conversor de Moedas</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css" />
 </head>
 
 <body>
-  <div class="container">
-    <div class="card mt-4">
-      <h5 class="card-header text-white bg-primary">Conversor de Moedas</h5>
-      <div class="card-body">
-        <p> Informe a cotação do Dólar, a cotação do Euro e o valor em Reais que se pretende converter, em seguida clique em <mark>"Converter"</mark>, para calcular os valores correspondentes.</p>
-       
+	<div class="container">
+		<div class="card mt-4">
+			<h5 class="card-header text-white bg-primary">Conversor de Moedas</h5>
+			<div class="card-body">
+				<p> Informe a cotação do Dólar, a cotação do Euro e o valor em Reais que se pretende converter, em
+					seguida
+					clique em <mark>"Converter"</mark>, para calcular os valores correspondentes.</p>
 
-        <form id="form_conversor" action="/converter" method="POST">
 
-          <div class="form-group">
-            <label for="cotacao_dolar">Cotação do Dólar (R$)</label>
-            <input id="cotacao_dolar" type="number" step="any" name="cotacao_dolar" value="<%=cotacao_dolar%>" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="cotacao_euro">Cotação do Euro (R$)</label>
-            <input id="cotacao_euro" type="number" step="any" name="cotacao_euro" value="<%=cotacao_euro%>" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="valor">Montante em Reais</label>
-            <input id="valor" type="number" step="any" name="valor" value="<%=valor%>" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="valor_dolar">Montante em Dólar (US$)</label>
-            <input id="valor_dolar" type="number" name="valor_dolar" value="<%=valor_dolar%>" class="form-control"
-              readonly>
-          </div>
-          <div class="form-group">
-            <label for="valor_euro">Montante em Euro (€)</label>
-            <input id="valor_euro" type="number" name="valor_euro" value="<%=valor_euro%>" class="form-control"
-              readonly>
-          </div>
+				<form id="form_conversor" action="/converter" method="POST">
 
-          <% if(mensagens.length > 0){ %>
-            <% mensagens.forEach(function(mensagem){ %>
-                <div class="alert alert-danger">
-                  <strong>Alerta!</strong> <%= mensagem %>
-                </div>
-            <% }); %>
-          <% } %>  
-        </form>
-      </div>
-      <div class="card-footer">
-        <input class="btn btn-primary btn-lg btn-block" type="submit" value="Converter" form="form_conversor">
-      </div>
-    </div>
-  </div>
+					<div class="form-group">
+						<label for="cotacao_dolar">Cotação do Dólar (R$)</label>
+						<input id="cotacao_dolar" type="number" step="any" name="cotacao_dolar"
+							value="<%=cotacao_dolar%>" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="cotacao_euro">Cotação do Euro (R$)</label>
+						<input id="cotacao_euro" type="number" step="any" name="cotacao_euro" value="<%=cotacao_euro%>"
+							class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="valor">Montante em Reais</label>
+						<input id="valor" type="number" step="any" name="valor" value="<%=valor%>" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="valor_dolar">Montante em Dólar (US$)</label>
+						<input id="valor_dolar" type="number" name="valor_dolar" value="<%=valor_dolar%>"
+							class="form-control" readonly>
+					</div>
+					<div class="form-group">
+						<label for="valor_euro">Montante em Euro (€)</label>
+						<input id="valor_euro" type="number" name="valor_euro" value="<%=valor_euro%>"
+							class="form-control" readonly>
+					</div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="/js/bootstrap.min.js"></script>
+					<% if(mensagens.length > 0){ %>
+					<% mensagens.forEach(function(mensagem){ %>
+					<div class="alert alert-danger">
+						<strong>Alerta!</strong> <%= mensagem %>
+					</div>
+					<% }); %>
+					<% } %>
+				</form>
+			</div>
+			<div class="card-footer">
+				<input class="btn btn-primary btn-lg btn-block" type="submit" value="Converter" form="form_conversor">
+			</div>
+		</div>
+	</div>
+
+	<footer class="page-footer font-small blue pt-4">
+		<div class="footer-copyright text-center py-3">© 2020 VendaProdutos - Autor:
+			<a href="https://github.com/omateuscastro/"> Mateus Castro</a>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 
 </html>
