@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const port = 3000;
 
 var app = express();
 
@@ -32,4 +33,6 @@ app.post("/converter", function(req, res){
     res.render("index", {valor: valor.toFixed(2), cotacao_dolar: cotacao_dolar.toFixed(2), cotacao_euro: cotacao_euro.toFixed(2), valor_dolar: valor_dolar.toFixed(2), valor_euro: valor_euro.toFixed(2), mensagens: mensagens});
 });
 
-app.listen(3000);
+app.listen(port, () => {
+	console.log(`O ConversorMoedas está rodando em http://localhost:${port}`)
+})
